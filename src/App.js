@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar"
 import MainBody from "./components/MainBody"
 import Location from './components/Location'
 import { BrowserRouter, Switch, Route, useParams } from 'react-router-dom'
-
 function HandleLocation(){
   let { loc } = useParams();
   return (
@@ -10,16 +9,17 @@ function HandleLocation(){
   )
 }
 
+
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <BrowserRouter>
+      <BrowserRouter basename='/Indian-Tourism/build'>
         <Switch>
-          <Route path='/Indian-Tourism/build/' exact>
+          <Route path='/' exact>
             <MainBody />
           </Route>
-          <Route path='/Indian-Tourism/build/:loc' children={<HandleLocation />}>
+          <Route path='/:loc' children={<HandleLocation />}>
           </Route>
         </Switch>
       </BrowserRouter>
