@@ -4,6 +4,7 @@ import {useState} from 'react'
 import HowToReach from "./HowToReach.jsx"
 import Map from "./Map"
 
+
 const location = [
     {title: 'Goa', info: 'The pocket-sized paradise of Goa is a traveller\'s dream. Sun, sea,...'},
     {title: 'Assam', info: 'It’s huge, almost gigantic! That is the first reaction most people...'},
