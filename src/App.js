@@ -16,10 +16,10 @@ function App() {
       <Navbar />
       <BrowserRouter>
         <Switch>
-          <Route path='/' exact>
+          <Route path='/Indian-Tourism/build/' exact>
             <MainBody />
           </Route>
-          <Route path='/:loc' children={<HandleLocation />}>
+          <Route path='/Indian-Tourism/build/:loc' children={<HandleLocation />}>
           </Route>
         </Switch>
       </BrowserRouter>
