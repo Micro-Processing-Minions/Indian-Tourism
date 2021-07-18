@@ -1,8 +1,7 @@
 function Map(){
     return(
-        <div className="bg-white my-10">
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div className="bg-white my-10" id='map_marker'>
+            btrn
         </div>
     )
 }

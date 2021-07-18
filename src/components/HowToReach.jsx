@@ -2,7 +2,7 @@ import HowToReachCard from "./HowToReachCard";
 
 function HowToReach(){
     return(
-        <div>
+        <div className='px-64'>
             <div className="mt-10 flex justify-center text-3xl font-bold">
                 <h2>How to Reach</h2>
             </div>
