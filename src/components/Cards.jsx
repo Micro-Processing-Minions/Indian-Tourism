@@ -50,7 +50,7 @@ function HeaderCard({heading, info}){
         <div className="md:px-64 md:my-5 sm:px-10 sm:my-5">
             <div>
                 <h2 className="flex justify-center text-3xl font-bold">{heading}</h2>
-                <p className="mt-6">{info}</p>
+                <p className="mt-6 md:px-10 lg:px-0">{info}</p>
             </div>
         </div>
     )
@@ -59,7 +59,7 @@ function HeaderCard({heading, info}){
 function MustVisitedPlaces({location}){
     const [locations] = useState()
     return (
-        <div className="px-64">
+        <div className="sm:px-8 md:px-32 lg:px-64">
             <h2 className="flex justify-center text-3xl font-bold">Must Visit Destinations</h2>
             <p className="flex justify-center text-lg">From historical cities to natural splendours, come see the best of India</p>
             <div className="grid grid-cols-3 mt-5 gap-6">
@@ -80,9 +80,9 @@ function Cards({title, info}){
                 </figure> 
                 <div class="justify-end card-body">
                     <h2 class="card-title">{title}</h2> 
-                    <p>{info}</p> 
+                    <p className="">{info}</p> 
                     <div class="card-actions">
-                        <button button class="btn btn-primary">Get Information</button>
+                        <button button class="btn btn-primary">more info</button>
                     </div>
                 </div>
             </div> 

@@ -2,6 +2,7 @@ import {PointOfIntrestCards, MustVisitedPlaces, HeaderCard} from "./Cards.jsx"
 import HeroVideo from './HeroVideo'
 import {useState} from 'react'
 import HowToReach from "./HowToReach.jsx"
+import Form from "./Form"
 import Map from "./Map"
 
 const location = [
@@ -21,6 +22,7 @@ function MainBody(){
             <MustVisitedPlaces location={location} />
             {/* <Map /> */}
             <HowToReach />
+            <Form />
         </div>
     )
 }
