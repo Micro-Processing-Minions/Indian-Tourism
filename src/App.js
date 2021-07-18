@@ -13,8 +13,8 @@ function HandleLocation(){
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter basename='/Indian-Tourism/build'>
+        <Navbar />
         <Switch>
           <Route path='/' exact>
             <MainBody />
