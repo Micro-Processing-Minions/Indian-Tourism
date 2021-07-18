@@ -1,17 +1,25 @@
+import { Link } from 'react-router-dom'
+
 function Navbar(){
     return(
         <div className="bg-white">
             <div className="flex justify-between items-center border-b-2">
                 <ul className="flex tracking-wider ml-2">
-                    <li className="mr-4">
+                    <Link to='/'>
+                        <li className="mr-4">
                         <a href="/" className="border-b-2">Destinations</a>
-                    </li>
-                    <li className="mr-4">
+                        </li>
+                    </Link>
+                    <Link to='/kolkata'>
+                        <li className="mr-4">
                         <a href="/" className="border-b-2">Experiances</a>
-                    </li>
-                    <li>
+                        </li>
+                    </Link>
+                    <Link to='/Indian-Tourism/build/kolkata'>
+                        <li>
                         <a href="/" className="border-b-2">Travel</a>
-                    </li>
+                        </li>
+                    </Link>
                 </ul>
                 <div className="text-4xl font-medium">
                     <h1 className="mr-24 p-1 tracking-wider">Travel</h1>
