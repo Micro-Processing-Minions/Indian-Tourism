@@ -1,7 +1,7 @@
-function HeroVideo({videoURL}) {
+function HeroVideo({ videoURL }) {
     return (
         <div className='heroCard'>
-            <video src={videoURL} autoPlay loop></video>
+            <video src={videoURL} autoPlay loop muted></video>
         </div>
     )
 }
