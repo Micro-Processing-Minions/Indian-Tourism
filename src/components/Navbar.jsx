@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 function Navbar(){
     return(
         <div className="bg-white">
-            <div className="flex justify-between items-center border-b-2">
+            <div className="px-5 flex justify-between items-center border-b-2">
+
                 <ul className="flex tracking-wider ml-2">
                     <Link to='/'>
                         <li className="mr-4">

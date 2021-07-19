@@ -15,6 +15,8 @@ function App() {
     <div className="App">
       <BrowserRouter basename='/Indian-Tourism/build'>
         <Navbar />
+
+
         <Switch>
           <Route path='/' exact>
             <MainBody />

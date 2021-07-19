@@ -1,4 +1,7 @@
 import {useState} from 'react'
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function HorizontalCard({img, title, info, imagePlacement}){
     return (
@@ -63,9 +66,11 @@ function MustVisitedPlaces({location}){
             <h2 className="flex justify-center text-3xl font-bold">Must Visit Destinations</h2>
             <p className="flex justify-center text-lg">From historical cities to natural splendours, come see the best of India</p>
             <div className="grid grid-cols-3 mt-5 gap-6">
+                <OwlCarousel className='owl-theme' loop margin={10} nav>
                 {location.map((place, zipCode) => {
                     return <Cards title={place.title} key={zipCode} info={place.info}/>
                 })}
+                </OwlCarousel>;
             </div>
         </div>
     )
@@ -74,7 +79,7 @@ function MustVisitedPlaces({location}){
 function Cards({title, info}){
     return(
         <div>
-            <div class="card shadow-xl image-full">
+            <div class="item card shadow-xl image-full">
                 <figure>
                     <img src="https://picsum.photos/id/1005/400/250" alt="good day"/>
                 </figure> 

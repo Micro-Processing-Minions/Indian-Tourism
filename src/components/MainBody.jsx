@@ -1,5 +1,6 @@
 import {PointOfIntrestCards, MustVisitedPlaces, HeaderCard} from "./Cards.jsx"
 import HeroVideo from './HeroVideo'
+import Gallary from './Gallary'
 import {useState} from 'react'
 import HowToReach from "./HowToReach.jsx"
 import Form from "./Form"
@@ -13,12 +14,13 @@ const location = [
 ]
 
 function MainBody(){
-    const [videoURL] = useState('https://www.youtube.com/embed/i2p_742MOO8')
+    const [videoURL] = useState('https://drive.google.com/file/d/1tIGjUHgecZnRxYvhnaqW3xiPUjQ-g6wG/preview')
     
     return(
         <div>
             <HeroVideo videoURL={videoURL}/>
             <HeaderCard heading='Heading' info='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quam corrupti vero obcaecati esse, aperiam perspiciatis aliquam hic veniam consequatur, quod fugit corporis ea voluptatibus iure nihil molestias, dolor officiis soluta porro. Possimus voluptate totam, debitis aliquam blanditiis veniam quod.' />
+            <Gallary />
             <PointOfIntrestCards />
             <MustVisitedPlaces location={location} />
             {/* <Map /> */}
