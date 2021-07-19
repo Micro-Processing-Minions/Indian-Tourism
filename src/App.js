@@ -3,8 +3,11 @@ import MainBody from "./components/MainBody"
 import Location from './components/Location'
 import CardBody from "./components/CardBody";
 import { BrowserRouter, Switch, Route, useParams } from 'react-router-dom'
+
+
 function HandleLocation(){
   let { loc } = useParams();
+  console.log(loc);
   return (
     <Location title={loc} />
   )

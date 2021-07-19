@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Attraction from "./Attraction";
 import DemoCarousel from "./DemoCarousel";
 import HowToReach from "./HowToReach.jsx"
+import { useParams } from 'react-router-dom'
 
 function IntroCard({title, alt, img}){
   return (
@@ -20,15 +21,31 @@ function IntroCard({title, alt, img}){
   )
 }
 
+
+
+
 function CardBody() {
+  let { loc } = useParams();
+  const [title, setTitle] = useState(loc)
+  fetch('https://indian-tourism-web-protal.herokuapp.com/'+loc, {
+      method: "GET",
+      mode: "cors"
+  })
+  .then(response => {
+    console.log(response)
+  })
+
+
+
+
   return (
     <div className="mainDiv ">
-      <IntroCard title='Goa' alt='Land of sun, sand and spices' img='./assets/sumit-sourav-eSRtxPd9q1c-unsplash.jpg'/>
+      <IntroCard title={title} alt='Land of sun, sand and spices' img='./assets/sumit-sourav-eSRtxPd9q1c-unsplash.jpg'/>
 
       <div className="flex flex-col justify-center items-center bg-gray-300	p-16">
-        <p className=" m-8	text-2xl	text-gray-600		">Home / Destinations / Goa</p>
+        <p className="m-8	text-2xl	text-gray-600">Home / Destinations / Goa</p>
 
-        <p className=" text-lg	w-5/6	text-center	 text-gray-500	">
+        <p className="text-lg	w-5/6	text-center text-gray-500	">
           The pocket-sized paradise of Goa is a traveller's dream. Sun, sea,
           sand, spices, spirituality and seafood, along with a balmy weather,
           call to the soul of trekkers, backpackers, nature lovers and those who
