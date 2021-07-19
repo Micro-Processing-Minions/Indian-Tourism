@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar"
-import MainBody from "./components/MainBody"
+import Navbar from "./components/Navbar";
+import CardBody from "./components/CardBody";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <MainBody />
+      <CardBody />
     </div>
   );
 }
