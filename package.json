@@ -7,9 +7,14 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "daisyui": "^1.9.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-responsive-carousel": "^3.2.19",
+=======
+    "react-router-dom": "^5.2.0",
+>>>>>>> ef94d7ae37b1427b54572d75cbad8c642016dbd6
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
@@ -41,5 +46,6 @@
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
-  }
+  },
+  "homepage": "."
 }
