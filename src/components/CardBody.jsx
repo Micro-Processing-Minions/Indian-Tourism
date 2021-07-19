@@ -1,21 +1,29 @@
 import React from "react";
 import Attraction from "./Attraction";
 import DemoCarousel from "./DemoCarousel";
+import HowToReach from "./HowToReach.jsx"
+
+function IntroCard({title, alt, img}){
+  return (
+    <div className="flex flex-col justify-center items-center">
+        <img
+          src={img}
+          alt="main"
+          className="m-8 w-3/5 box-border	filter drop-shadow-2xl bg-cover bg-center opacity-70"
+        />
+
+        <div className="absolute md:left-1/3 md:top-1/3	-translate-x-2/4 -translate-y-2/4 text-center text-white hover:text-black">
+          <h3 className="text-9xl">{title}</h3>
+          <p className="text-3xl	">{alt}</p>
+        </div>
+      </div>
+  )
+}
+
 function CardBody() {
   return (
     <div className="mainDiv ">
-      <div className="flex flex-col justify-center 	items-center 			">
-        <img
-          src="/assets/sumit-sourav-eSRtxPd9q1c-unsplash.jpg "
-          alt="main"
-          className="m-8 w-3/5 box-border	filter drop-shadow-2xl	"
-        />
-
-        <div className="absolute left-1/3 top-1/3	-translate-x-2/4 -translate-y-2/4	 text-center	text-gray-100		">
-          <h3 className="text-9xl">Goa</h3>
-          <p className="text-3xl	">Land of sun, sand and spices</p>
-        </div>
-      </div>
+      <IntroCard title='Goa' alt='Land of sun, sand and spices' img='./assets/sumit-sourav-eSRtxPd9q1c-unsplash.jpg'/>
 
       <div className="flex flex-col justify-center items-center bg-gray-300	p-16">
         <p className=" m-8	text-2xl	text-gray-600		">Home / Destinations / Goa</p>
@@ -34,9 +42,8 @@ function CardBody() {
         </p>
       </div>
 
-      <div>
-        <Attraction />
-      </div>
+      <Attraction />
+      <HowToReach />
     </div>
   );
 }
