@@ -1,8 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 
 function Child() {
-  let { loc } = useParams();
-  console.log(loc);
+  const { loc } = useParams()
   // fetch('https://indian-tourism-web-protal.herokuapp.com/'+loc)
   // .then(response => response.json())
   // .then(data => {
@@ -17,7 +16,7 @@ function Child() {
 }
 
 function Navbar(){
-    const LocationList = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttaranchal", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chhattisgarh"]
+    const LocationList = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttarakhand", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chhattisgarh"]
     return(
         <div className="bg-white">
             <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content   ">
