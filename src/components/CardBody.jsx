@@ -10,7 +10,7 @@ function IntroCard({title, alt, img}){
         <img
           src={img}
           alt="main"
-          className="m-8 w-3/5 box-border	filter drop-shadow-2xl bg-cover bg-center opacity-70"
+          className="m-8 w-3/5 box-border	filter drop-shadow-2xl bg-cover bg-center opacity-70 heroImg"
         />
 
         <div className="absolute	-translate-x-2/4 -translate-y-2/4 text-center text-white hover:text-black">

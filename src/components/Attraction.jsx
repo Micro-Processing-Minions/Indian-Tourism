@@ -9,7 +9,7 @@ function Card({title, info, img, imagePlacement}){
   return (
     
     <div className="flex flex-col justify-center">
-        {(imagePlacement == 'up') && <img src={img} alt={title} style={imageFix} className="w-5/5 rounded" />}
+        {(imagePlacement == 'up') && <img src={img} alt={title} style={imageFix} className="w-5/5 rounded placeOfIntrest" />}
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-3xl m-4">{title}</h2>
           <p className="text-center	text-lg">

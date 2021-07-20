@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-
+import { useState } from 'react'
 function Child() {
   // const { loc } = useParams()
   console.log("Change in URL");
@@ -14,6 +14,29 @@ function Child() {
       <h3>ID:</h3>
     </div>
   );
+}
+
+const Search = () => {
+  const [place, setPlace] = useState()
+
+  return (
+    <div>
+      <div class="flex-1 lg:flex-none">
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-ghost" value={place} onChange={(e) => setPlace(e.target.value)} />
+      </div>
+    </div> 
+    <div class="flex-none">
+    <Link to={`/${place}`}>
+    <button class="btn btn-square btn-ghost">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">             
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>             
+      </svg>
+    </button>
+    </Link>
+  </div> 
+    </div>
+  )
 }
 
 function Navbar(){
@@ -54,18 +77,8 @@ function Navbar(){
   </div> 
 
   </div> 
-  <div class="flex-1 lg:flex-none">
-    <div class="form-control">
-      <input type="text" placeholder="Search" class="input input-ghost"/>
-    </div>
-  </div> 
-  <div class="flex-none">
-    <button class="btn btn-square btn-ghost">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">             
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>             
-      </svg>
-    </button>
-  </div> 
+  <Search />
+  
 </div>
         </div>
   );
