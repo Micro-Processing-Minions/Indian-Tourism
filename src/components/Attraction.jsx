@@ -30,7 +30,7 @@ function Attraction({places}) {
     <>
       {places.map((place, index) => {
         return (
-          <div className="	flex flex-col  justify-center	">
+          <div className="flex flex-col  justify-center	">
             <HorizontalCard title={place.name} info='' img={place.img} imagePlacement='up' />
           </div>
         )
