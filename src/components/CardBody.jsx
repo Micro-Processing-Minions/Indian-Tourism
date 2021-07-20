@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Attraction from "./Attraction";
 import HowToReach from "./HowToReach.jsx"
 import { useParams } from 'react-router-dom'
-import useAPILocation from "./useAPILocation";
-
 function IntroCard({title, alt, img}){
   return (
     <div className="flex flex-col justify-center items-center">
@@ -23,31 +21,20 @@ function IntroCard({title, alt, img}){
 
 
 
-
-function CardBody({location, setLoc}) {
-  let { loc } = useParams();
-  setLoc(loc)
-  const place = useAPILocation(location)
-  
-  useEffect(() => {
-    console.log("API REQUESTED: "+location);
-    place.relaodNewLocation(location)
-  }, [location])
-
-
+function CardBody({ title, alt, img, info, places }) {
   return (
-    <div className="mainDiv ">
-      <IntroCard title={place.place.title} alt={place.place.tagline} img={place.place.img}/>
+    <div className="mainDiv">
+      <IntroCard title={title} alt={alt} img={img}/>
 
       <div className="flex flex-col justify-center items-center bg-gray-300	p-16">
-        <p className="m-8	text-2xl	text-gray-600">Home / Destinations / {place.place.title}</p>
+        <p className="m-8	text-2xl	text-gray-600">Home / Destinations / {title}</p>
 
         <p className="text-lg	w-5/6	text-center text-gray-500	">
-          {place.place.info}
+          {info}
         </p>
       </div>
 
-      <Attraction places={place.places}/>
+      {(places) && <Attraction places={places}/>}
       <HowToReach />
     </div>
   );

@@ -8,15 +8,16 @@ function HorizontalCard({img, title, info, imagePlacement}){
         width: '100%',
         height: '100%'
     }
+    
     return (
-        <div class="card lg:card-side bordered m-4 bg-white">
+        <div className="card lg:card-side bordered m-4 bg-white">
             {imagePlacement === 'up' && <figure><img src={img} alt='' style={imgWidth}/></figure> }
-            <div class="card-body">
-                <h2 class="card-title">{title}</h2> 
+            <div className="card-body">
+                <h2 className="card-title">{title}</h2> 
                 <p>{info}</p> 
-                {/* <div class="card-actions">
-                <button class="btn btn-primary">Get Started</button> 
-                <button class="btn btn-ghost">More info</button>
+                {/* <div className="card-actions">
+                <button className="btn btn-primary">Get Started</button> 
+                <button className="btn btn-ghost">More info</button>
                 </div> */}
             </div>
             {imagePlacement === 'down' && <figure><img src={img} style={imgWidth} alt=''/></figure> }
@@ -88,12 +89,12 @@ function MustVisitedPlaces(){
 function Cards({title, info, img, alt}){
     return(
         <div>
-            <div class="item card shadow-xl image-full">
+            <div className="item card shadow-xl image-full">
                 <figure>
                     <img src={img} alt={alt}/>
                 </figure> 
-                <div class="justify-end card-body">
-                    <h2 class="card-title">{title}</h2> 
+                <div className="justify-end card-body">
+                    <h2 className="card-title">{title}</h2> 
                     <p className="">{info}</p>
                 </div>
             </div> 

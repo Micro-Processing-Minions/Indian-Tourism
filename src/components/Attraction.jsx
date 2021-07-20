@@ -35,7 +35,7 @@ function Attraction({places}) {
         <p className="text-5xl my-10 text-center text-gray-600">Place of Intrest</p>
       <div className="grid grid-cols-3 justify-center">
         {places.map((place, index) => {
-          return <HorizontalCard title={place.name} info='' img={place.img} imagePlacement='up' />
+          return <HorizontalCard keys={index} title={place.name} info='' img={place.img} imagePlacement='up' />
         })}
       </div>
     </div>
