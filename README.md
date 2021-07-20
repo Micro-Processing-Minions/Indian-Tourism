@@ -14,3 +14,4 @@ I know it was a Disaster, Our team was not there when we need them. everyone was
 [x] Our Own Backend API
 [x] Contact Form Submition into a google sheet(as our db)
 [x] The whole thing is build with react so it was fun to implement our new knowledge
+[x] If your Location is not in the Menu you can search it in our search box and our intelligent search will Find it for you :) (experimental: things might break)

@@ -17,7 +17,7 @@ function Child() {
 }
 
 const Search = () => {
-  const [place, setPlace] = useState()
+  const [place, setPlace] = useState('')
 
   return (
     <div>
