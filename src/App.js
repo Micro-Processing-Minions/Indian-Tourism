@@ -1,20 +1,16 @@
 import Navbar from "./components/Navbar"
 import MainBody from "./components/MainBody"
-import Location from './components/Location'
 import CardBody from "./components/CardBody";
 import { BrowserRouter, Switch, Route, useParams } from 'react-router-dom'
+import { useState } from 'react'
 
 
-function HandleLocation(){
-  let { loc } = useParams();
-  console.log(loc);
-  return (
-    <Location title={loc} />
-  )
+const handleURLChange = () => {
+  console.log("URL CHanged")
 }
 
-
 function App() {
+  const [location, setLoc] = useState('india')
   return (
     <div className="App">
       <BrowserRouter basename='/Indian-Tourism/build'>
@@ -24,8 +20,8 @@ function App() {
           <Route path='/' exact>
             <MainBody />
           </Route>
-          <Route path='/:loc' children={<HandleLocation />}>
-          <CardBody />
+          <Route path='/:loc' children={handleURLChange}>
+          <CardBody location={location} setLoc={setLoc}/>
           </Route>
         </Switch>
       </BrowserRouter>

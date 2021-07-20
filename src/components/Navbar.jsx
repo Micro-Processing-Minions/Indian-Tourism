@@ -1,7 +1,8 @@
 import { Link, useParams } from 'react-router-dom'
 
 function Child() {
-  const { loc } = useParams()
+  // const { loc } = useParams()
+  console.log("Change in URL");
   // fetch('https://indian-tourism-web-protal.herokuapp.com/'+loc)
   // .then(response => response.json())
   // .then(data => {
@@ -10,7 +11,7 @@ function Child() {
 
   return (
     <div>
-      <h3>ID: {loc}</h3>
+      <h3>ID:</h3>
     </div>
   );
 }
@@ -20,15 +21,17 @@ function Navbar(){
     return(
         <div className="bg-white">
             <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content   ">
-  <div class="flex-1 hidden px-2 mx-2 lg:flex">
+  <div class="flex-1 px-2 mx-2 lg:flex">
   <div class="dropdown dropdown-hover">
-  <div tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
+  <div tabindex="0">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>               
-      </svg></div> 
+      </svg>
+      </div> 
   <ul class="shadow menu dropdown-content bg-base-100 rounded-box w-52 text-black" style={{height:'400px', overflow:'auto'}}>
         {LocationList.map(location => {
              return (
-                <Link to={'/'+location} children={<Child />}>
+                <Link to={`/${location}`} children={<Child />}>
                 <li className="mr-4">
                    <span href="#" className="border-b-2">{location}</span>
                 </li>
