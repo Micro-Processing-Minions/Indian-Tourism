@@ -4,18 +4,22 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function HorizontalCard({img, title, info, imagePlacement}){
+    const imgWidth = {
+        width: '100%',
+        height: '100%'
+    }
     return (
         <div class="card lg:card-side bordered m-4 bg-white">
-            {imagePlacement === 'up' && <figure><img src={img} alt=''/></figure> }
+            {imagePlacement === 'up' && <figure><img src={img} alt='' style={imgWidth}/></figure> }
             <div class="card-body">
                 <h2 class="card-title">{title}</h2> 
                 <p>{info}</p> 
-                <div class="card-actions">
+                {/* <div class="card-actions">
                 <button class="btn btn-primary">Get Started</button> 
                 <button class="btn btn-ghost">More info</button>
-                </div>
+                </div> */}
             </div>
-            {imagePlacement === 'down' && <figure><img src={img} alt=''/></figure> }
+            {imagePlacement === 'down' && <figure><img src={img} style={imgWidth} alt=''/></figure> }
         </div> 
     )
 }
@@ -26,21 +30,21 @@ function PointOfIntrestCards(){
                 <h2 className="flex justify-center text-3xl font-bold">Point of Intrest</h2>
                     
                     <HorizontalCard
-                        img='https://i.picsum.photos/id/1005/600/400.jpg?hmac=RHLkAWAPjK7zvSVfmz7ULItYJMQQFF9kQ2SheLO5EV8'
-                        title='Statue of Unity'
-                        info='It’s huge, almost gigantic! That is the first reaction most people have as they speed down the winding road leading to the towering Statue of Unity (SoU). A long bridge connects the mainland to the Sadhu Bet Island, on which the statue stands.'
+                        img='https://www.planetware.com/photos-large/IND/india-top-attractions-taj-mahal.jpg'
+                        title='The Taj Mahal, Agra'
+                        info="Perhaps India's most recognizable building, the Taj Mahal is also the world's most famous testimony to the power of love. Named after Mumtaz Mahal, the favorite wife of Emperor Shah Jahan"
                         imagePlacement='up'
                     />
                     <HorizontalCard
-                        img='https://i.picsum.photos/id/1005/600/400.jpg?hmac=RHLkAWAPjK7zvSVfmz7ULItYJMQQFF9kQ2SheLO5EV8'
-                        title='Beaches'
-                        info="India's shorelines are endowed with a glorious beauty that is reflected in its undulating golden beaches that make for an ideal vantage point to watch the sun dipping into the sea. Beaches stroke both the eastern and western coasts of the Indian peninsula."
+                        img='https://www.planetware.com/photos-large/IND/india-top-attractions-harmandir-sahib.jpg'
+                        title='Harmandir Sahib: The Golden Temple of Amritsar'
+                        info="Founded in 1577 by Ram Das, Amritsar is an important hub of Sikh history and culture."
                         imagePlacement='down'
                     />
                     <HorizontalCard
-                        img='https://i.picsum.photos/id/1005/600/400.jpg?hmac=RHLkAWAPjK7zvSVfmz7ULItYJMQQFF9kQ2SheLO5EV8'
-                        title='Cathedrals And Basilicas'
-                        info='India boasts many architectural marvels, including cathedrals and basilicas that are recognised the world over for their beauty.'
+                        img='https://www.planetware.com/photos-large/IND/india-top-attractions-amer-fort.jpg'
+                        title='Amer Fort, Jaipur'
+                        info='Amer Fort (often also spelt \"Amber\") was built as a fortified palace in 1592 by Maharaja Man Singh I and has long served as the capital of Jaipur. Carved high up into the hillside, the fort is accessible on foot via a steep climb or by shuttle rides from the town below (better still, let an elephant do the work).'
                         imagePlacement='up'
                     />
 
@@ -52,23 +56,28 @@ function HeaderCard({heading, info}){
     return (
         <div className="md:px-64 md:my-5 sm:px-10 sm:my-5">
             <div>
-                <h2 className="flex justify-center text-3xl font-bold">{heading}</h2>
                 <p className="mt-6 md:px-10 lg:px-0">{info}</p>
             </div>
         </div>
     )
 }
 
-function MustVisitedPlaces({location}){
+function MustVisitedPlaces(){
     const [locations] = useState()
+    const [images, setImages] = useState([])
+    fetch("https://indian-tourism-web-protal.herokuapp.com")
+    .then(response => response.json())
+    .then(data => {
+        setImages(data.data)
+    })
     return (
-        <div className="sm:px-8 md:px-32 lg:px-64">
+        <div className="sm:px-8 md:px-32 lg:px-12">
             <h2 className="flex justify-center text-3xl font-bold">Must Visit Destinations</h2>
             <p className="flex justify-center text-lg">From historical cities to natural splendours, come see the best of India</p>
-            <div className="grid grid-cols-3 mt-5 gap-6">
-                <OwlCarousel className='owl-theme' loop margin={10} nav>
-                {location.map((place, zipCode) => {
-                    return <Cards title={place.title} key={zipCode} info={place.info}/>
+            <div className="grid grid-col-3 mt-5 gap-2">
+                <OwlCarousel className='owl-theme' loop margin={3} nav>
+                {images.map((place, zipCode) => {
+                    return <Cards title={place.title} key={zipCode} info={place.info} alt={place.alt} img={place.img}/>
                 })}
                 </OwlCarousel>;
             </div>
@@ -76,19 +85,16 @@ function MustVisitedPlaces({location}){
     )
 }
 
-function Cards({title, info}){
+function Cards({title, info, img, alt}){
     return(
         <div>
             <div class="item card shadow-xl image-full">
                 <figure>
-                    <img src="https://picsum.photos/id/1005/400/250" alt="good day"/>
+                    <img src={img} alt={alt}/>
                 </figure> 
                 <div class="justify-end card-body">
                     <h2 class="card-title">{title}</h2> 
-                    <p className="">{info}</p> 
-                    <div class="card-actions">
-                        <button button class="btn btn-primary">more info</button>
-                    </div>
+                    <p className="">{info}</p>
                 </div>
             </div> 
         </div>

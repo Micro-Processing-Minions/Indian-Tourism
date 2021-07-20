@@ -6,23 +6,16 @@ import {useState} from 'react'
 import Form from "./Form"
 import Map from "./Map"
 
-
-const location = [
-    {title: 'Goa', info: 'The pocket-sized paradise of Goa is a traveller\'s dream. Sun, sea,...'},
-    {title: 'Assam', info: 'It’s huge, almost gigantic! That is the first reaction most people...'},
-    {title: 'China', info: 'It has a longest bridge you can see it from outer space... i am sure'}
-]
-
 function MainBody(){
     const [videoURL] = useState('https://drive.google.com/file/d/1tIGjUHgecZnRxYvhnaqW3xiPUjQ-g6wG/preview')
     
     return(
         <div>
             <HeroVideo videoURL={videoURL}/>
-            <HeaderCard heading='Heading' info='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quam corrupti vero obcaecati esse, aperiam perspiciatis aliquam hic veniam consequatur, quod fugit corporis ea voluptatibus iure nihil molestias, dolor officiis soluta porro. Possimus voluptate totam, debitis aliquam blanditiis veniam quod.' />
+            <HeaderCard info='One of the oldest civilisations in the world, India is a mosaic of multicultural experiences. With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct geographical entity.' />
             <Gallary />
             <PointOfIntrestCards />
-            <MustVisitedPlaces location={location} />
+            <MustVisitedPlaces />
             {/* <Map /> */}
             
             <Form />

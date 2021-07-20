@@ -3,7 +3,6 @@ import Attraction from "./Attraction";
 import DemoCarousel from "./DemoCarousel";
 import HowToReach from "./HowToReach.jsx"
 import { useParams } from 'react-router-dom'
-// import { useLocation } from './useLocation'
 
 function IntroCard({title, alt, img}){
   return (
@@ -26,13 +25,11 @@ function IntroCard({title, alt, img}){
 
 
 function CardBody() {
-  // const [MyAPi] = useLocation()
   let { loc } = useParams();
   const [title, setTitle] = useState(loc)
   const [img, setImg] = useState('')
   const [tagline, setTagline] = useState('')
   const [info, setInfo] = useState('')
-  // console.log(MyAPi.locationArray.loc)
   fetch('https://indian-tourism-web-protal.herokuapp.com/'+loc)
   .then(response => response.json())
   .then(data => {
