@@ -30,6 +30,7 @@ function CardBody() {
   const [img, setImg] = useState('')
   const [tagline, setTagline] = useState('')
   const [info, setInfo] = useState('')
+  const [places, setPlaces] = useState([])
   fetch('https://indian-tourism-web-protal.herokuapp.com/'+loc)
   .then(response => response.json())
   .then(data => {
@@ -37,6 +38,7 @@ function CardBody() {
     setImg(data.img)
     setTagline(data.tagline)
     setInfo(data.desc)
+    setPlaces(data.places_to_visit)
   })
 
 
@@ -54,7 +56,7 @@ function CardBody() {
         </p>
       </div>
 
-      <Attraction />
+      <Attraction places={places}/>
       <HowToReach />
     </div>
   );

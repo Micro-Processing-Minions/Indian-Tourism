@@ -1,33 +1,8 @@
 function Form(){
-    const currentColor = 'blue'
     return(
-        <div className="bg-gray-700 mt-2">
-            {/* <div className="md:px-64 sm:px-10 pt-10">
-                <form className="bg-gray-300 text-gray-700 px-10 grid grid-cols-2 py-5 rounded-xl text-sm shadow-lg">
-                    <div className="py-2 flex flex-col md:mr-64">
-                        <label className="font-bold">NAME:</label>
-                        <input type="text" name="name"/>
-                    </div>
-                    <div className="py-2 flex flex-col md:mx-32">
-                        <label className="font-bold">PHONE NUMBER:</label>
-                        <input type="number" name="phone"/>
-                    </div>
-                    <div className="py-2 flex flex-col md:mr-64">
-                        <label className="font-bold">EMAIL ADDRESS:</label>
-                        <input type="text" name="email"/>
-                    </div>
-                    <div className="py-2 flex flex-col md:mx-32">
-                        <label className="font-bold">COUNTRY:</label>
-                        <input type="text" name="country"/>
-                    </div>
-                    <div className="py-2 col-span-2 flex flex-col mr-32">
-                        <label className="font-bold">MESSAGE: </label>
-                        <input type="text" name="message" placeholder="Type your message here"/>
-                    </div>
-                </form>
-            </div> */}
+        <div className="bg-gray-700 m-2 p-5">
       <div
-        class="max-w-screen-xl mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+        class="max-w-screen-xl m-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
         <div class="flex flex-col justify-between">
           <div>
             <h2 class="text-4xl lg:text-5xl font-bold leading-tight">Lets talk about everything!</h2>

@@ -3,7 +3,7 @@ function HowToReachCard(){
         <div>
             <div class="card text-center shadow-2xl h-100">
                 <figure class="px-10 pt-10">
-                    <img src="https://picsum.photos/id/1005/400/250" class="rounded-xl" />
+                    <img src="https://picsum.photos/id/1005/400/250" class="rounded-xl" alt=''/>
                 </figure> 
                 <div class="card-body">
                     <h2 class="card-title">shadow, center, padding</h2> 

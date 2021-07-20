@@ -4,7 +4,6 @@ import Gallary from './Gallary'
 import {useState} from 'react'
 
 import Form from "./Form"
-import Map from "./Map"
 
 function MainBody(){
     const [videoURL] = useState('https://drive.google.com/file/d/1tIGjUHgecZnRxYvhnaqW3xiPUjQ-g6wG/preview')
@@ -16,7 +15,6 @@ function MainBody(){
             <Gallary />
             <PointOfIntrestCards />
             <MustVisitedPlaces />
-            {/* <Map /> */}
             
             <Form />
         </div>

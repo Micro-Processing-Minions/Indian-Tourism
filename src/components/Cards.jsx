@@ -71,7 +71,7 @@ function MustVisitedPlaces(){
         setImages(data.data)
     })
     return (
-        <div className="sm:px-8 md:px-32 lg:px-12">
+        <div className="sm:px-8 md:px-32 lg:px-12 mt-10">
             <h2 className="flex justify-center text-3xl font-bold">Must Visit Destinations</h2>
             <p className="flex justify-center text-lg">From historical cities to natural splendours, come see the best of India</p>
             <div className="grid grid-col-3 mt-5 gap-2">
