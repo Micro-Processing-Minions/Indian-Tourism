@@ -28,7 +28,7 @@ const Search = ({setPlac, handleURLChange}) => {
 }
 
 function Navbar({setPlace, handleURLChange}){
-    const LocationList = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttarakhand", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chhattisgarh"]
+    const LocationList = ["Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu and Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Kolkata","Madhya Pradesh", "Maharashtra-goa", "Manipur", "Manali","Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttarakhand", "Uttar Pradesh", "Haryana", "Himachal Pradesh", "Chattisgarh"]
     return(
         <div className="bg-white">
             <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content   ">
