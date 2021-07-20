@@ -21,8 +21,8 @@ function App() {
   // }, [location])
   return (
     <div className="App">
-      {/*<BrowserRouter basename='/Indian-Tourism/build'>*/}
-      <BrowserRouter>
+      <BrowserRouter basename='/Indian-Tourism/build'>
+      {/*<BrowserRouter>*/}
         <Navbar place={location} setPlace={place.changeLocation} handleURLChange={place.relaodNewLocation}/>
         
         <Switch>
