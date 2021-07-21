@@ -20,11 +20,10 @@ def user():
     resp.set_cookie('same-site-cookie', 'foo', samesite='Lax');
     resp.headers.add('Set-Cookie','cross-site-cookie=bar; SameSite=None; Secure')
     email = request.args["email"] or ''
-    phone = request.args["phone"] or ''
     name = request.args["name"] or ''
     msg = request.args["msg"] or ''
     f = open('saves.txt', 'a+')
-    f.write(":".join([email, phone, name, msg])+'\n')
+    f.write(":".join([email, name, msg])+'\n')
     f.close()
     return 'success'
 

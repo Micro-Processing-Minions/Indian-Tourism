@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -63,35 +63,27 @@ function HeaderCard({heading, info}){
     )
 }
 
-function MustVisitedPlaces(){
-    const [locations] = useState()
-    const [images, setImages] = useState([])
-    fetch("https://indian-tourism-web-protal.herokuapp.com")
-    .then(response => response.json())
-    .then(data => {
-        setImages(data.data)
-    })
+
+function MustVisitedPlaces({images}){
     return (
         <div className="sm:px-8 md:px-32 lg:px-12 mt-10">
             <h2 className="flex justify-center text-3xl font-bold">Must Visit Destinations</h2>
             <p className="flex justify-center text-lg">From historical cities to natural splendours, come see the best of India</p>
-            <div className="grid grid-col-3 mt-5 gap-2">
-                <OwlCarousel className='owl-theme' loop margin={3} nav>
-                {images.map((place, zipCode) => {
-                    return <Cards title={place.title} key={zipCode} info={place.info} alt={place.alt} img={place.img}/>
-                })}
-                </OwlCarousel>;
-            </div>
+            <OwlCarousel className="owl-theme" loop margin={10} nav>
+            {images.map((place, zipCode) => {
+                return <Cards title={place.title} key={zipCode} info={place.info} alt={place.alt} img={place.img}/>
+            })}
+            </OwlCarousel>
         </div>
     )
 }
 
 function Cards({title, info, img, alt}){
     return(
-        <div>
-            <div className="item card shadow-xl image-full">
+        <div class="item">
+            <div className="card shadow-xl image-full">
                 <figure>
-                    <img src={img} alt={alt}/>
+                    <img src={img} alt={alt} className='carousel-img'/>
                 </figure> 
                 <div className="justify-end card-body">
                     <h2 className="card-title">{title}</h2> 

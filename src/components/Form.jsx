@@ -1,4 +1,16 @@
+import { useState } from 'react'
+
 function Form(){
+  const [name, setName] = useState('')
+  const [msg, setMsg] = useState('')
+  const [email, setEmail] = useState('')
+
+  const handleFormSend = () => {
+    if(name == '' || msg == '')
+      return
+    fetch(`https://indian-tourism-web-protal.herokuapp.com/add/new?email=${email}&name=${name}&msg=${msg}`)
+    .then(resp => console.log(resp))
+  }
     return(
         <div className="bg-gray-700 m-2 p-5">
       <div
@@ -512,21 +524,22 @@ function Form(){
           <div>
             <span className="uppercase text-sm text-gray-600 font-bold">Full Name</span>
             <input className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-              type="text" placeholder="" />
+              type="text" placeholder="" value={name} onChange={(e) => setName(e.target.value)}/>
           </div>
           <div className="mt-8">
             <span className="uppercase text-sm text-gray-600 font-bold">Email</span>
             <input className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-              type="text" />
+              type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
           </div>
           <div className="mt-8">
             <span className="uppercase text-sm text-gray-600 font-bold">Message</span>
             <textarea
-              className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+              className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" value={msg} onChange={(e) => setMsg(e.target.value)}></textarea>
           </div>
           <div className="mt-8">
             <button
-              className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+              className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+              onClick={handleFormSend}>
               Send Message
             </button>
           </div>
